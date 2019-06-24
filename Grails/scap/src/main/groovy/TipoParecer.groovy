@@ -1,0 +1,4 @@
+enum TipoParecer
+{
+	FAVORAVEL, DESFAVORAVEL
+}

@@ -1,0 +1,4 @@
+enum TipoAfastamento
+{
+	NACIONAL, INTERNACIONAL
+}

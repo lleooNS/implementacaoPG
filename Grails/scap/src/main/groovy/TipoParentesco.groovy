@@ -1,0 +1,4 @@
+enum TipoParentesco
+{
+	SANGUINEO, MATRIMONIAL
+}
