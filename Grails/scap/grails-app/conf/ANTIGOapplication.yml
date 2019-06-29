@@ -2,7 +2,7 @@
 grails:
     profile: web
     codegen:
-        defaultPackage: teste
+        defaultPackage: scap
     gorm:
         reactor:
             # Whether to translate GORM events into Reactor events
@@ -91,24 +91,23 @@ hibernate:
 dataSource:
     pooled: true
     jmxExport: true
-    driverClassName: com.mysql.cj.jdbc.Driver
-    dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-    username: root
-    password: leo 
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ''
 
 environments:
     development:
         dataSource:
             dbCreate: create-drop
-            url: jdbc:mysql://localhost:3306/scap
+            url: jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
     test:
         dataSource:
             dbCreate: update
-            url: jdbc:mysql://localhost:3306/scap
+            url: jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
     production:
         dataSource:
-            dbCreate: update
-            url: jdbc:mysql://localhost:3306/scap
+            dbCreate: none
+            url: jdbc:h2:./prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
             properties:
                 jmxEnabled: true
                 initialSize: 5
@@ -127,8 +126,3 @@ environments:
                 testOnReturn: false
                 jdbcInterceptors: ConnectionState
                 defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
-                #removeAbandonedTimeout: 120
-                #removeAbandoned: true
-                
-server:
-    contextPath: /scap

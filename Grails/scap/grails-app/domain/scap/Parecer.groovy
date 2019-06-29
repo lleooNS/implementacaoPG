@@ -2,7 +2,7 @@ package scap
 
 class Parecer {
 
-	Calendar dataParecer
+	Date dataParecer
 	TipoParecer julgamento
 	String motivo
 

@@ -2,8 +2,8 @@ package scap
 
 class Mandato {
 
-	Calendar dataInicio
-	Calendar dataFim
+	Date dataInicio
+	Date dataFim
 
 	//relacionamento um-para-muitos
 	//um mandato pertence a somente um professor

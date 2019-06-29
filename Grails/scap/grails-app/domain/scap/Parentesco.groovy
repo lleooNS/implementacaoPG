@@ -3,14 +3,16 @@ package scap
 class Parentesco {
 
 	TipoParentesco parentesco
+	Professor professor
 
 	// Modificando o modo como a representação textual é gerada
 	String toString() {
 		this.parentesco
 	}
 
-	static belongsTo = Professor
-	static hasMany = [professores: Professor]
+	static belongsTo = [Professor]
+	
+	//static hasMany = [professores: Professor]
 
     static constraints = {
     }

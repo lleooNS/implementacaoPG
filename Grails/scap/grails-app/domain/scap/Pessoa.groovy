@@ -16,8 +16,15 @@ class Pessoa {
     static constraints = 
     {
         nome nullable:false, blank:false, maxSize:128
-        email nullable:false, blank:false, email:true
+        email nullable:false, blank:false, email:true, unique:true
         telefone nullable:false, blank:false
         sobreNome nullable:false, blank:false
+    }
+
+    static mapping =
+    {
+        //tablePerHierarchy false
+        discriminator column: "cargo", value: "VAZIO"
+    
     }
 }

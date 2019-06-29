@@ -2,15 +2,15 @@ package scap
 
 class Afastamento {
 
-	Calendar dataSolic
-	Calendar dataIniAfast
-	Calendar dataFimAfast
+	Date dataSolic
+	Date dataIniAfast
+	Date dataFimAfast
 	SituacaoSolicitacao situacaoSolic
 	TipoAfastamento tipoAfast
 	String motivoAfast
 	Onus onus
-	Calendar dataIniEvento
-	Calendar dataFimEvento
+	Date dataIniEvento
+	Date dataFimEvento
 	String nomeEvento
 
 	//Relacionamento um-para-muitos
@@ -33,6 +33,7 @@ class Afastamento {
 		dataFimEvento nullable:false, blank:false
 		nomeEvento nullable:false, blank:false
 		professor nullable:false
+		relator nullable:true, blank:true
 
     }
 }

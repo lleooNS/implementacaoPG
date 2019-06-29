@@ -4,7 +4,7 @@ class Documento {
 
 	String tituloDocumento
 	String nomeArquivo
-	Calendar dataJuntada
+	Date dataJuntada
 
 	//Relacionamento um-para-muitos
 	//Um documento pertence a somente um afastamento
