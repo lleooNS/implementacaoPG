@@ -24,7 +24,21 @@
 
     <div class="collapse navbar-collapse" aria-expanded="false" style="height: 0.8px;" id="navbarContent">
         <ul class="nav navbar-nav ml-auto">
-            <g:pageProperty name="page.nav"/>
+            <!-- <g:pageProperty name="page.nav"/> -->
+            <a href="#" role="button" aria-haspopup="true" aria-expanded="false">SCAP - Sistema de Controle de Afastamento de Professores<span class="caret"></span></a>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <sec:ifLoggedIn>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Olá <sec:username /><span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Profile</a></li>
+                        <li><g:link controller='logout'>Sair</g:link></li>
+                    </ul>
+                </li>
+
+            </sec:ifLoggedIn>
         </ul>
     </div>
 
@@ -32,7 +46,9 @@
 
 <g:layoutBody/>
 
+
 <div class="footer row" role="contentinfo">
+<!--
     <div class="col">
         <a href="http://guides.grails.org" target="_blank">
             <asset:image src="advancedgrails.svg" alt="Grails Guides" class="float-left"/>
@@ -57,6 +73,8 @@
         <strong class="centered"><a href="https://grails-slack.cfapps.io" target="_blank">Join the Community</a></strong>
         <p>Get feedback and share your experience with other Grails developers in the community <a href="https://grails-slack.cfapps.io" target="_blank">Slack channel</a>.</p>
     </div>
+
+-->
 </div>
 
 
