@@ -4,6 +4,7 @@ class Parentesco {
 
 	TipoParentesco parentesco
 	Professor professor
+	Professor parente
 
 	// Modificando o modo como a representação textual é gerada
 	String toString() {
@@ -15,5 +16,6 @@ class Parentesco {
 	//static hasMany = [professores: Professor]
 
     static constraints = {
+    	//professor nullable:false
     }
 }
