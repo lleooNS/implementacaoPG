@@ -597,3 +597,18 @@ img.grails-logo {
     height:250px;
     margin-top:20px;
 }
+
+
+
+
+
+.flex {
+    height: 20vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+

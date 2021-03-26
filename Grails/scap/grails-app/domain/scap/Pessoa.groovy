@@ -16,7 +16,7 @@ class Pessoa {
     static constraints = 
     {
         nome nullable:false, blank:false, maxSize:128
-        sobrenome nullable:false, blank:false
+        sobrenome nullable:false, blank:false   
         email nullable:false, blank:false, email:true, unique:true
         telefone nullable:false, blank:false
     }

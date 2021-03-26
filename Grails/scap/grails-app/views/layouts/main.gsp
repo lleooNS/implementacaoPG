@@ -17,7 +17,7 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark navbar-static-top" role="navigation">
-    <a class="navbar-brand" href="/#"><asset:image src="grails.svg" alt="Grails Logo"/></a>
+    <a class="navbar-brand" href="/scap"><asset:image src="grails.svg" alt="Grails Logo"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -29,16 +29,17 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <sec:ifLoggedIn>
-                
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Olá <sec:username /><span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Profile</a></li>
+                        <%-- <li><a href="#">Profile</a></li> --%>
                         <li><g:link controller='logout'>Sair</g:link></li>
                     </ul>
                 </li>
-
             </sec:ifLoggedIn>
+            <sec:ifNotLoggedIn>
+                <g:link controller='login' action='auth'>Login</g:link>
+            </sec:ifNotLoggedIn>
         </ul>
     </div>
 
