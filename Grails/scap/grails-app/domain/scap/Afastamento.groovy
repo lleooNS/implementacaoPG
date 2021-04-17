@@ -36,4 +36,9 @@ class Afastamento {
 		relator nullable:true, blank:true
 
     }
+
+	//Modificando o modo como a representação textual é gerada
+    String toString() {
+        this.nomeEvento + ": " + this.professor
+    }
 }

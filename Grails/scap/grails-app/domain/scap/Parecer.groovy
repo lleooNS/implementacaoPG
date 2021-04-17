@@ -17,4 +17,9 @@ class Parecer {
     	afastamento nullable:false
     	professor nullable:false
     }
+
+	//Modificando o modo como a representação textual é gerada
+    String toString() {
+        this.motivo
+    }
 }

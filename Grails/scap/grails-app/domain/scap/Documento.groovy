@@ -17,4 +17,9 @@ class Documento {
     	dataJuntada nullable:false, blank:false
     	afastamento nullable:false
     }
+
+	//Modificando o modo como a representação textual é gerada
+    String toString() {
+        this.nomeArquivo
+    }
 }

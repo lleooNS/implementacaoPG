@@ -15,4 +15,9 @@ class Mandato {
 		dataFim nullable:false, blank:false
 		professor nullable:false
     }
+
+	//Modificando o modo como a representação textual é gerada
+    String toString() {
+        this.professor
+    }
 }

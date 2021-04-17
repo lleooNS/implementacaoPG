@@ -98,4 +98,53 @@ class AfastamentoController {
             '*'{ render status: NOT_FOUND }
         }
     }
+
+    def buscarPorNomeEvento(){
+        def lista = []
+        lista = Afastamento.findAllByNomeEventoIlike("%"+params.nome+"%")
+        render(view:"index", model: [listaFiltroNomeEvento: lista]) 
+    }
+
+    def buscarPorNomeProfessor(){
+        def lista = []
+    
+        String hql = "Select afast from Afastamento afast"+
+        " where lower((concat(afast.professor.nome, ' ', afast.professor.sobrenome)))"+
+        " like lower('%"+params.nome+"%')"
+
+        lista = Afastamento.executeQuery(hql)
+
+        render(view:"index", model: [listaFiltroNomeProfessor: lista]) 
+
+        // lista = Afastamento.createCriteria().list{
+        //     professor{
+        //         or{
+        //             ilike("nome","%"+params.nome+"%")
+        //             ilike("sobrenome","%"+params.nome+"%")
+        //         }
+                
+        //     }
+        // }
+    }
+
+    def buscarPorDatas(){
+        def lista = []
+
+        String strDataInicial = ''+params.dataInicial_year+'-'+params.dataInicial_month+'-'+params.dataInicial_day+' 00:00:00'
+        Date dataInicialSolic = Date.parse('yyyy-MM-dd HH:mm:ss', strDataInicial)
+
+        String strDataFinal = ''+params.dataFinal_year+'-'+params.dataFinal_month+'-'+params.dataFinal_day+' 00:00:00'
+        Date dataFinalSolic = Date.parse('yyyy-MM-dd HH:mm:ss', strDataFinal)
+        
+        lista = Afastamento.findAllByDataSolicBetween(dataInicialSolic, dataFinalSolic)
+
+        render(view:"index", model: [listaFiltroDatas: lista]) 
+    }
+
+    def buscarPorSituacao(){
+        def lista = []
+        lista = Afastamento.findAllBySituacaoSolic(params.situacoes)
+        render(view:"index", model: [listaFiltroSituacoes: lista]) 
+    }
+
 }

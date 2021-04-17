@@ -98,4 +98,18 @@ class ProfessorController {
             '*'{ render status: NOT_FOUND }
         }
     }
+
+    def buscarPorEmail(){
+        def lista = []
+        lista = Professor.findAllByEmailIlike("%"+params.email+"%")
+        render(view:"index", model: [listaFiltroEmail: lista]) 
+    }
+
+    def buscarChefe(){
+        def lista = []
+        lista = Professor.createCriteria().list{
+            sizeEq("mandatos",1)
+        }
+        render(view:"index", model: [chefe: lista]) 
+    }
 }
