@@ -15,14 +15,14 @@ class Afastamento {
 
 	//Relacionamento um-para-muitos
 	//Um afastamento pertence a somente um professor
-	static belongsTo = [professor:Professor]
+	static belongsTo = [professor:Professor, relator: Professor]
 
 	//relacionamento bidirecional
 	//Um afastamento pode possuir 0 ou muitos documentos
 	static hasMany = [documentos:Documento]
 
 	//Somente 0 ou um relator
-	static hasOne = [relator: Relator]
+	// static hasOne = [relator: Relator]
 
     static constraints = {
 

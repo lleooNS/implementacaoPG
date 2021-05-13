@@ -108,7 +108,7 @@ class ProfessorController {
     def buscarChefe(){
         def lista = []
         lista = Professor.createCriteria().list{
-            sizeEq("mandatos",1)
+            sizeEq("mandato",1)
         }
         render(view:"index", model: [chefe: lista]) 
     }

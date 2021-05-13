@@ -66,7 +66,7 @@
                         <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
                             <g:if test="${c.naturalName != 'Pessoa Controller' && c.naturalName != 'Main Controller' && c.naturalName != 'Login Controller' && c.naturalName != 'Logout Controller'}">
                                 <sec:ifNotGranted roles="ROLE_ADMIN">
-                                    <g:if test="${c.naturalName == 'Afastamento Controller' || c.naturalName == 'Documento Controller' || c.naturalName == 'Parecer Controller' || c.naturalName == 'Relator Controller' }">
+                                    <g:if test="${c.naturalName == 'Afastamento Controller' || c.naturalName == 'Documento Controller' || c.naturalName == 'Parecer Controller' }">
                                         <div>                            
                                             <%-- <g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link> --%>                                                 
                                             <g:link controller="${c.logicalPropertyName}">
@@ -78,15 +78,13 @@
                                     </g:if>
                                 </sec:ifNotGranted>
                                 <sec:ifNotGranted roles="ROLE_USER">
-                                    <g:if test="${c.naturalName != 'Relator Controller' }">                              
-                                        <div>                            
-                                            <g:link controller="${c.logicalPropertyName}">
-                                                <button type="button" class="button" style="height: 3em">
-                                                    ${c.naturalName}
-                                                </button>    
-                                            </g:link> 
-                                        </div>
-                                        </g:if>
+                                    <div>                            
+                                        <g:link controller="${c.logicalPropertyName}">
+                                            <button type="button" class="button" style="height: 3em">
+                                                ${c.naturalName}
+                                            </button>    
+                                        </g:link> 
+                                    </div>
                                 </sec:ifNotGranted>                          
                             </g:if>
                         </g:each>                       
